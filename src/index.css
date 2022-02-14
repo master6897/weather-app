@@ -14,3 +14,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root{
+  --filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bfbbbc",endColorstr="#3c3d3d",GradientType=1);
+
+  --clear-background: rgb(190,207,205);
+  --clear-background-gradient: linear-gradient(0deg, rgba(190,207,205,1) 0%, rgba(45,147,196,1) 100%);
+  
+  
+
+  --cloudy-background: rgb(198,207,200);
+  --cloudy-background-gradient: linear-gradient(0deg, rgba(198,207,200,1) 0%, rgba(4,84,126,1) 100%);
+
+  --thunder-background: rgb(236,130,156);
+  --thunder-background-gradient: linear-gradient(0deg, rgba(236,130,156,1) 0%, rgba(4,84,126,1) 100%);
+
+  --rain-background: rgb(191,187,188);
+  --rain-background-gradient: linear-gradient(0deg, rgba(191,187,188,1) 0%, rgba(60,61,61,1) 100%);
+}
