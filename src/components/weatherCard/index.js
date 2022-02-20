@@ -41,7 +41,6 @@ const GlassMorphism = styled.article`
     color: #E5E5E5;
     @media screen and (min-width: 1025px){
         width:50%;
-        min-height: 30vh;
         max-height: 30vh;
         & > img{
             width: 100px;
@@ -57,10 +56,6 @@ const StyledH1 = styled.h1`
     @media screen and (min-width: 1025px){
         font-size: 3rem;
     }
-`;
-
-const StyledImg = styled.img`
-    grid-area: 4 / 3 / 5 / 5;
 `;
 
 const StyledParagraph = styled.p`
