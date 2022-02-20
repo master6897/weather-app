@@ -15,6 +15,11 @@ const MainContainer = styled.div`
     width: 100%;
     box-sizing: border-box;
     background: transparent;
+    @media screen and (min-width: 1025px){
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+    }
 `
 const GlassMorphism = styled.article`
     width:90%;
@@ -31,6 +36,11 @@ const GlassMorphism = styled.article`
     background: rgba(0, 0, 0, 0.12);
     border-radius: 20px;
     color: #E5E5E5;
+    @media screen and (min-width: 1025px){
+        width:50%;
+        min-height: 30vh;
+        max-height: 30vh;
+    }
 
 `;
 
@@ -38,6 +48,9 @@ const StyledH1 = styled.h1`
     font-size: 1.5rem;
     grid-area: 1/1/2/3;
     text-transform: uppercase;
+    @media screen and (min-width: 1025px){
+        font-size: 3rem;
+    }
 `;
 
 const StyledImg = styled.img`
@@ -55,6 +68,9 @@ const StyledParagraph = styled.p`
     &.wind{
         grid-area: 4/1/5/3;
     }
+    @media screen and (min-width: 1025px){
+        font-size: 1.5rem;
+    }
 `;
 
 const StyledDiv = styled.div`
@@ -65,6 +81,9 @@ const StyledDiv = styled.div`
 const StyledIcon = styled(FontAwesomeIcon)`
     font-size: 2.8rem;
     margin-right: .5rem;
+    @media screen and (min-width: 1025px){
+        font-size: 4rem;
+    }
 `
 
 export default function WeatherCard(){

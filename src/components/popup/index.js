@@ -16,8 +16,12 @@ const StyledArticle = styled.article`
     background-color: red;
     color: white;
     transition: all 0.6s ease-out;
+    @media screen and (min-width: 1025px){
+        width:30%;
+    }
     ${props => props.fail === 'true' ? 
-    'transform: translate(440px);' : 'transform: translate(-400px);'
+    'transform: translate(40vw);' : 'transform: translate(-100vw);'
+    
 }
 `
 function Popup(props){

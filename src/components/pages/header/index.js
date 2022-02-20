@@ -15,6 +15,14 @@ const StyledHeader = styled.header`
     box-sizing: border-box;
     padding: 1.5rem;
     width: 95%;
+    @media screen and (min-width: 1025px){
+        width:50%;
+        margin-bottom: 1rem;
+        justify-content: center;
+        & h1{
+            font-size: 2rem;
+        }
+    }
 `
 
 const StyledDiv = styled.div`
@@ -22,8 +30,11 @@ const StyledDiv = styled.div`
     justify-content: space-between;
     align-items:center;
     &.location{
-        width: 30%;
+        width: 20%;
         color: #E5E5E5;
+        @media screen and (min-width: 1025px){
+            margin-right: 2rem;
+        }
     }
     &.search{
         background: #ECE8E8;

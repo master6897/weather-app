@@ -14,6 +14,14 @@ const MainContainer = styled.article`
     box-sizing: border-box;
     min-height: 10vh;
     background: transparent;
+    @media screen and (min-width: 1025px){
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content: space-around;
+        width:50%;
+        margin-top: 0;
+        padding: 2rem;
+    }
 `
 
 const GlassMorphism = styled.div`
@@ -30,11 +38,23 @@ const GlassMorphism = styled.div`
     background: rgba(0, 0, 0, 0.12);
     border-radius: 20px;
     color: #E5E5E5;
-
+    @media screen and (min-width: 1025px){
+        max-height: 30vh;
+        min-width: 40%;
+        justify-content: center;
+        box-sizing: border-box;
+        margin: 0 1rem 1rem 0 ;
+        & p {
+            font-size: 2rem;
+        }
+    }
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
     font-size: 2.5rem;
+    @media screen and (min-width: 1025px){
+        font-size: 4rem;
+    }
 `
 
 export default function  WeatherDetails(){

@@ -14,6 +14,9 @@ const StyledArticle = styled.article`
     margin-top: 1rem;
     padding: 0.5rem;
     color: #E5E5E5;
+    @media screen and (min-width: 1025px){
+        width: 90%;
+    }
 `
 const StyledContainer = styled.div`
     width: 100%;
@@ -21,6 +24,9 @@ const StyledContainer = styled.div`
     display: flex;
     height: 100%;
     overflow: hidden;
+    @media screen and (min-width: 1025px){
+        overflow-x: scroll;
+    }
 `
 
 const StyledDiv = styled.div`
@@ -41,6 +47,10 @@ const StyledDayContainer = styled.div`
     border-radius: 20px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     min-width: 90vw;
+    @media screen and (min-width: 1025px){
+        min-width: 40vh;
+        margin: 0 1rem 1rem 0;
+    }
 `
 
 const StyledH1 = styled.h1`
@@ -58,16 +68,25 @@ const StyledIcon = styled(FontAwesomeIcon)`
         position: relative;
         bottom: 45%;
         left: 97%;
+        @media screen and (min-width: 1025px){
+            display:none;
+        }
     }
     &.left-arrow{
         position: relative;
         bottom: 45%;
         left: -15%;
+        @media screen and (min-width: 1025px){
+            display:none;
+        }
     }
     &.left-arrow-last{
         position: relative;
         bottom: 45%;
         left: -8%;
+        @media screen and (min-width: 1025px){
+            display:none;
+        }
     }
 `
 
