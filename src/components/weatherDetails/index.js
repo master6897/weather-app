@@ -7,6 +7,9 @@ import { faWind, faCloudSun, faMoon, faCloud } from '@fortawesome/free-solid-svg
 const MainContainer = styled.article`
     margin-top: 1.5rem;
     display: flex;
+    display: -webkit-box; 
+  display: -ms-flexbox;  
+  display: -webkit-flex;
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
@@ -31,6 +34,9 @@ const GlassMorphism = styled.div`
     padding: .5rem;
 
     display: flex;
+    display: -webkit-box; 
+  display: -ms-flexbox;  
+  display: -webkit-flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;

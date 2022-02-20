@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTemperatureLow, faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faTemperatureLow } from '@fortawesome/free-solid-svg-icons'
 import { GlobalContext } from "../reducers/GlobalState";
 
 
 const StyledArticle = styled.article`
     display: flex;
+    display: -webkit-box; 
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -14,7 +17,7 @@ const StyledArticle = styled.article`
     margin-top: 1rem;
     padding: 0.5rem;
     color: #E5E5E5;
-    @media screen and (min-width: 1025px){
+    @media screen and (min-width: 481px){
         width: 90%;
     }
 `
@@ -22,19 +25,31 @@ const StyledContainer = styled.div`
     width: 100%;
     flex: 1;
     display: flex;
+    display: -webkit-box; 
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     height: 100%;
     overflow: hidden;
-    @media screen and (min-width: 1025px){
+    @media screen and (min-width: 481px){
         overflow-x: scroll;
     }
 `
 
 const StyledDiv = styled.div`
     display: flex;
+    display: -webkit-box; 
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     transition: 0.3s ease;
     & > img{
         margin-left: 5rem;
         width: 20%;
+    }
+    &#slider{
+        flex-direction: column;
+        @media screen and (min-width: 481px){
+            flex-direction: row;
+        }
     }
 `
 
@@ -47,7 +62,7 @@ const StyledDayContainer = styled.div`
     border-radius: 20px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     min-width: 90vw;
-    @media screen and (min-width: 1025px){
+    @media screen and (min-width: 481px){
         min-width: 40vh;
         margin: 0 1rem 1rem 0;
     }
@@ -68,7 +83,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
         position: relative;
         bottom: 45%;
         left: 97%;
-        @media screen and (min-width: 1025px){
+        @media screen and (min-width: 481px){
             display:none;
         }
     }
@@ -76,7 +91,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
         position: relative;
         bottom: 45%;
         left: -15%;
-        @media screen and (min-width: 1025px){
+        @media screen and (min-width: 481px){
             display:none;
         }
     }
@@ -84,7 +99,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
         position: relative;
         bottom: 45%;
         left: -8%;
-        @media screen and (min-width: 1025px){
+        @media screen and (min-width: 481px){
             display:none;
         }
     }
@@ -96,7 +111,6 @@ function WeatherForecast () {
     const [lat, setLat] = useState();
     const [lon, setLon] = useState();
     const [slider, setSlider] = useState();
-    let xPos = 0;
     useEffect(()=>{
         setLat(weather?.coord.lat);
         setLon(weather?.coord.lon);
@@ -117,15 +131,6 @@ function WeatherForecast () {
         }
             fetchData();
     }, [lat, lon, weather?.coord.lat, weather?.coord.lon, slider])
-
-    function next(){
-        xPos -= 98;
-        slider.style.transform = `translateX(${xPos}vw)`;
-    }
-    function previous(){
-        xPos += 98;
-        slider.style.transform = `translateX(${xPos}vw)`;
-    }
         
     return(
         <StyledArticle>
@@ -150,8 +155,6 @@ function WeatherForecast () {
                             </li>
                             <li>Ciśnienie: {day.pressure} hPa</li>
                         </ol>
-                        {index === 6? <StyledIcon className="left-arrow-last" icon={faArrowLeft} onClick={()=> previous()}/>: <StyledIcon className="right-arrow" icon={faArrowRight} onClick={()=> next()}/>}
-                        {index === 0 || index === 6? null: <StyledIcon className="left-arrow" icon={faArrowLeft} onClick={()=> previous()}/>}
                     </StyledDayContainer>
                 )}
                 </StyledDiv>

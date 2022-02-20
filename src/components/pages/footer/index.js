@@ -6,6 +6,9 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 const StyledFooter = styled.footer`
     width: 20%;
     display: flex;
+    display: -webkit-box; 
+  display: -ms-flexbox;  
+  display: -webkit-flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 2rem;

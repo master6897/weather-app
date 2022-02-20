@@ -8,6 +8,9 @@ import WeatherForecast from "../../weatherForecast";
 const StyledContainer = styled.div`
   width: 100%;
   display: flex;
+  display: -webkit-box; 
+  display: -ms-flexbox;  
+  display: -webkit-flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

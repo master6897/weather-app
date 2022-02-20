@@ -10,6 +10,9 @@ const StyledDiv = styled.div`
     top:0;
     left:0;
     display: flex;
+    display: -webkit-box; 
+  display: -ms-flexbox;  
+  display: -webkit-flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;

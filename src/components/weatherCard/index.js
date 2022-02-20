@@ -9,6 +9,9 @@ import WeatherDetails from '../weatherDetails';
 
 const MainContainer = styled.div`
     display: flex;
+    display: -webkit-box; 
+  display: -ms-flexbox;  
+  display: -webkit-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -40,6 +43,9 @@ const GlassMorphism = styled.article`
         width:50%;
         min-height: 30vh;
         max-height: 30vh;
+        & > img{
+            width: 100px;
+        }
     }
 
 `;

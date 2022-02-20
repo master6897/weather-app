@@ -9,8 +9,11 @@ import Footer from "../pages/footer";
 
 const StyledContainer = styled.div`
   width: 100%;
+  min-height: 100vh;
   box-sizing: border-box;
-  height: 100vh;
+  display: -webkit-box; 
+  display: -ms-flexbox;  
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   align-items: center;

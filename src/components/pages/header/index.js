@@ -1,24 +1,22 @@
 import React, {useContext, useEffect, useState} from 'react';
-import styled from 'styled-components';
+import styled, {css, keyframes} from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
 import { faSearch, faTimes} from '@fortawesome/free-solid-svg-icons'
 import { GlobalContext } from '../../reducers/GlobalState';
-import Popup from '../../popup';
 
 const StyledHeader = styled.header`
     background: transparent;
     display: flex;
     justify-content: space-between;
-    margin-top: 2em;
     min-height: 2rem;
     box-sizing: border-box;
     padding: 1.5rem;
     width: 95%;
-    @media screen and (min-width: 1025px){
-        width:50%;
+    @media screen and (min-width: 481px){
+        width:100%;
         margin-bottom: 1rem;
-        justify-content: center;
+        justify-content: flex-start;
         & h1{
             font-size: 2rem;
         }
@@ -32,8 +30,9 @@ const StyledDiv = styled.div`
     &.location{
         width: 20%;
         color: #E5E5E5;
-        @media screen and (min-width: 1025px){
+        @media screen and (min-width: 481px){
             margin-right: 2rem;
+            justify-content: space-evenly;
         }
     }
     &.search{
@@ -41,7 +40,27 @@ const StyledDiv = styled.div`
         border-radius: 50px;
         box-sizing: border-box;
         padding: .5rem;
+        animation: ${props => (props.fail === 'true'? css`${shakeAnimation} 1s ease-in-out`: null)};
+        ${props => props.fail === 'true' ? 'border: 1px solid red;': null};
     }
+`
+
+const shakeAnimation = keyframes`
+  10%, 90% {
+    transform: translate(-1px, 0);
+  }
+  
+  20%, 80% {
+    transform: translate(2px, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate(-4px, 0);
+  }
+
+  40%, 60% {
+    transform: translate(4px, 0);
+  }
 `
 const StyledInput = styled.input`
     background: #ECE8E8;    
@@ -66,6 +85,8 @@ function Header(){
     const [fail, setFail] = useState('');
     console.log(city);
 
+    useEffect(()=>{
+    }, [fail,setFail])
     const handleSubmit = () =>{
             const fetchData = async () => {
             await fetch(`${process.env.REACT_APP_API_URL}/weather/?q=${city}&units=metric&lang=pl&APPID=${process.env.REACT_APP_API_KEY}`)
@@ -92,7 +113,7 @@ function Header(){
                 <FontAwesomeIcon icon={faLocationArrow}/>
                 <h1>{weather?.name}</h1>
             </StyledDiv>
-            <StyledDiv className="search">
+            <StyledDiv className="search" fail={fail}>
                 <StyledInput 
                 type="text" 
                 placeholder="Miejscowość..."
@@ -102,11 +123,6 @@ function Header(){
                 <FontAwesomeIcon icon={faSearch} size='lg'/>
                 </button>
             </StyledDiv>
-                <Popup fail={fail}>
-                    <StyledSpan onClick={() => setFail('false')}>
-                        <FontAwesomeIcon icon={faTimes} />
-                    </StyledSpan>
-                 </Popup>
         </StyledHeader>
     )
 }
