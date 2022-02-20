@@ -17,7 +17,7 @@ const StyledArticle = styled.article`
     color: white;
     transition: all 0.6s ease-out;
     @media screen and (min-width: 1025px){
-        width:30%;
+        width:32%;
     }
     ${props => props.fail === 'true' ? 
     'transform: translate(40vw);' : 'transform: translate(-100vw);'

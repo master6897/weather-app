@@ -56,6 +56,9 @@ const StyledSpan = styled.span`
     top: -.7rem;
     left: .8rem;
     cursor: pointer;
+    @media screen and (min-width: 1025px){
+        left: .5rem;
+    }
 `
 function Header(){
     const {weather, setWeather} = useContext(GlobalContext);
