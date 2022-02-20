@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import styled, {css, keyframes} from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
-import { faSearch, faTimes} from '@fortawesome/free-solid-svg-icons'
+import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import { GlobalContext } from '../../reducers/GlobalState';
 
 const StyledHeader = styled.header`
@@ -68,15 +68,6 @@ const StyledInput = styled.input`
     &:focus{
         text-decoration:none;
         outline:none;
-    }
-`
-const StyledSpan = styled.span`
-    position: relative;
-    top: -.7rem;
-    left: .8rem;
-    cursor: pointer;
-    @media screen and (min-width: 1025px){
-        left: .5rem;
     }
 `
 function Header(){
